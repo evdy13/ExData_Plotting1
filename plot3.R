@@ -1,0 +1,7 @@
+with(hpc, plot(hpc$Time_Date, Sub_metering_1, type = "n", xlab = "", ylab="Energy sub Metering"))
+lines(hpc$Time_Date, hpc$Sub_metering_1, col = "black")
+lines(hpc$Time_Date, hpc$Sub_metering_2, col = "red")
+lines(hpc$Time_Date, hpc$Sub_metering_3, col = "blue")
+legend("topright", pch = "|", col = c("black", "red", "blue"), legend = c("Sub_metering_1", "Sub_metering_2" , "Sub_metering_3"))
+dev.copy(png, file = "plot3.png")
+dev.off()
