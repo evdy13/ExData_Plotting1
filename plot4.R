@@ -1,4 +1,9 @@
+## create a 2 by 2 matrix for plots
+## assign margin size
+
 par(mfrow = c(2, 2), mar= c(2, 2, 1, 1))
+
+## create the four plots
 with(hpc, {
   
   plot(hpc$Time_Date, hpc$Global_active_power, type = "n", xlab = "", ylab="Global Active Power")
@@ -16,5 +21,7 @@ with(hpc, {
   plot(hpc$Time_Date, hpc$Global_reactive_power, type = "n", xlab = "", ylab="Global_reactive_power")
   lines(hpc$Time_Date, hpc$Global_reactive_power, type ="l")
 })
+
+## create a png of the plots
 dev.copy(png, file = "plot4.png")
 dev.off()
